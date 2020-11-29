@@ -188,6 +188,8 @@ shortest_path
 
 #### Highlight Shortest Path
 
+Undirected Path
+
 ```
 pos = nx.spring_layout(G)
 plt.figure(figsize=(10,10)) 
@@ -200,6 +202,21 @@ plt.axis('equal')
 plt.show()
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/shortest_graph.png)
+
+Directed Path
+```
+pos = nx.shell_layout(D)
+plt.figure(figsize=(10,10)) 
+shortest_graph = D.subgraph(shortest_path)
+nx.draw(D, pos, with_labels=True)
+shortest_edges = list(zip(shortest_path, shortest_path[1:]))
+nx.draw_networkx_nodes(D, pos, nodelist=shortest_path, node_color="r", label=G.nodes)
+nx.draw_networkx_edges(D, pos, edgelist=shortest_edges, edge_color="r")
+plt.axis('equal')
+plt.show()
+```
+![Alt text](https://github.com/docligot/network_tools/blob/main/shortest_directed_graph.png)
+
 
 ## References
 
