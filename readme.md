@@ -170,3 +170,6 @@ pd.DataFrame(list(page_rank.items()))
 
 ## References
 
+NetworkX: https://pypi.org/project/networkx/
+Network Analysis on Python: https://coderzcolumn.com/tutorials/data-science/network-analysis-in-python-important-structures-and-bipartite-graphs-networkx
+Stack Exchange: https://datascience.stackexchange.com/questions/61248/create-nodes-edges-from-csv-latitude-and-longitude-for-graphs
