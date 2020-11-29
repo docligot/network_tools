@@ -20,7 +20,7 @@ import numpy as np
 edges = pd.read_csv('edges_sample.csv', header=0, encoding = "ISO-8859-1")
 edges
 ```
-
+![Alt text](https://github.com/docligot/network_tools/blob/main/edge_data.png)
 
 ### Create Graphs
 
@@ -41,6 +41,8 @@ D = nx.from_pandas_edgelist(edges, source = 'from', target = 'to', create_using=
 nx.draw(G, with_labels=True)
 plt.show()
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/undirected_graph.png)
+
 
 #### Directed Graph
 
@@ -48,6 +50,7 @@ plt.show()
 nx.draw(D, with_labels=True)
 plt.show()
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/directed_graph.png)
 
 #### Circular Layout
 
@@ -55,6 +58,8 @@ plt.show()
 nx.draw_circular(G, with_labels=True)
 plt.show()
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/circular_graph.png)
+
 
 #### Spectral Layout
 
@@ -62,6 +67,8 @@ plt.show()
 nx.draw_spectral(G, with_labels=True)
 plt.show()
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/spectral_graph.png)
+
 
 #### Planar Layout
 
@@ -69,6 +76,7 @@ plt.show()
 nx.draw_planar(G, with_labels=True)
 plt.show()
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/planar_graph.png)
 
 #### Spring Layout
 
@@ -76,6 +84,8 @@ plt.show()
 nx.draw_spring(G, with_labels=True)
 plt.show()
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/spring_graph.png)
+
 
 #### Shell Layout
 
@@ -83,6 +93,8 @@ plt.show()
 nx.draw_shell(G, with_labels=True)
 plt.show()
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/shell_graph.png)
+
 
 #### Random Layout
 
@@ -90,6 +102,8 @@ plt.show()
 nx.draw_random(G, with_labels=True)
 plt.show()
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/random_graph.png)
+
 
 ### Network Statistics
 
@@ -98,31 +112,39 @@ plt.show()
 ```
 pd.DataFrame(G.edges)
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/edges.png)
 
 ```
 pd.DataFrame(G.nodes)
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/nodes.png)
+
 
 #### Degrees
 
 ```
 degrees = [val for (node, val) in G.degree()]
 degrees
+
+# [2, 3, 3, 5, 4, 2, 4, 2, 1, 2, 5, 3, 2, 3, 2, 1]
+
 ```
 
 ```
 in_degrees = [val for (node, val) in D.in_degree()]
 in_degrees
+
+
+# [0, 3, 0, 3, 1, 2, 0, 2, 1, 2, 3, 2, 0, 3, 0, 1]
+
 ```
 
 ```
 out_degrees = [val for (node, val) in D.out_degree()]
 out_degrees
-```
 
-```
-out_degrees = [val for (node, val) in D.out_degree()]
-out_degrees
+# [2, 0, 3, 2, 4, 0, 4, 0, 0, 0, 3, 1, 2, 0, 2, 0]
+
 ```
 
 #### Centrality
@@ -131,16 +153,20 @@ out_degrees
 closeness_centrality = nx.closeness_centrality(G)
 pd.DataFrame(list(closeness_centrality.items()))
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/closeness_centrality.png)
+
 
 ```
 betweeness_centrality = nx.betweenness_centrality(G, normalized = True, endpoints = False)
 pd.DataFrame(list(betweeness_centrality.items()))
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/betweeness_centrality.png)
 
 ```
 page_rank = nx.pagerank(G, alpha=0.8)
 pd.DataFrame(list(page_rank.items()))
 ```
+![Alt text](https://github.com/docligot/network_tools/blob/main/page_rank.png)
 
 ## References
 
