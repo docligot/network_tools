@@ -169,6 +169,37 @@ pd.DataFrame(list(page_rank.items()))
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/page_rank.png)
 
+### Shortest Paths
+
+#### Calculate Shortest Path
+
+```
+shortest_path = nx.shortest_path(G, '?????? Hongkongese revolution channel', 'Psychedelics Today')
+shortest_path
+
+# ['?????? Hongkongese revolution channel',
+ 'HEAL California',
+ 'Patel Prasad',
+ 'Healthy Earth - Healthy Home',
+ 'Blind Joe',
+ "Doug's Compounding Pharmacy",
+ 'Psychedelics Today']
+```
+
+#### Highlight Shortest Path
+
+```
+pos = nx.spring_layout(G)
+shortest_graph = G.subgraph(shortest_path)
+nx.draw(G, pos, with_labels=True)
+shortest_edges = list(zip(shortest_path, shortest_path[1:]))
+nx.draw_networkx_nodes(G, pos, nodelist=shortest_path, node_color="r", label=G.nodes)
+nx.draw_networkx_edges(G, pos, edgelist=shortest_edges, edge_color="r")
+plt.axis('equal')
+plt.show()
+```
+![Alt text](https://github.com/docligot/network_tools/blob/main/shortest_graph.png)
+
 ## References
 
 * NetworkX: https://pypi.org/project/networkx/
