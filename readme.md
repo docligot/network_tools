@@ -190,6 +190,7 @@ shortest_path
 
 ```
 pos = nx.spring_layout(G)
+plt.figure(figsize=(10,10)) 
 shortest_graph = G.subgraph(shortest_path)
 nx.draw(G, pos, with_labels=True)
 shortest_edges = list(zip(shortest_path, shortest_path[1:]))
