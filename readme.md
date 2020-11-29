@@ -24,6 +24,8 @@ edges
 
 ### Create Graphs
 
+Undirected graph only considers connections between nodes, directed graphs also consider the direction (source to target) of the connections between nodes.
+
 ```
 # Undirected Graph
 G = nx.from_pandas_edgelist(edges, source = 'from', target = 'to')
@@ -35,6 +37,8 @@ D = nx.from_pandas_edgelist(edges, source = 'from', target = 'to', create_using=
 
 ### Visualization
 
+Various layouts are availble to visualize a graph for exploration and interpretation. 
+
 #### Undirected Graph
 
 ```
@@ -42,7 +46,6 @@ nx.draw(G, with_labels=True)
 plt.show()
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/undirected_graph.png)
-
 
 #### Directed Graph
 
@@ -60,7 +63,6 @@ plt.show()
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/circular_graph.png)
 
-
 #### Spectral Layout
 
 ```
@@ -68,7 +70,6 @@ nx.draw_spectral(G, with_labels=True)
 plt.show()
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/spectral_graph.png)
-
 
 #### Planar Layout
 
@@ -86,7 +87,6 @@ plt.show()
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/spring_graph.png)
 
-
 #### Shell Layout
 
 ```
@@ -95,7 +95,6 @@ plt.show()
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/shell_graph.png)
 
-
 #### Random Layout
 
 ```
@@ -103,7 +102,6 @@ nx.draw_random(G, with_labels=True)
 plt.show()
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/random_graph.png)
-
 
 ### Network Statistics
 
@@ -119,8 +117,9 @@ pd.DataFrame(G.nodes)
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/nodes.png)
 
-
 #### Degrees
+
+Degree is a measure of the number of connections of a node. In directed graphs, in-degree is inward connection, and out-degree is outward direction. 
 
 ```
 degrees = [val for (node, val) in G.degree()]
@@ -148,6 +147,8 @@ out_degrees
 ```
 
 #### Centrality
+
+Centrality measures (closeness, betweenness, page rank) identify highly influential nodes in a network. Nodes with high centrality are often traversed by paths from one end of the network to another. 
 
 ```
 closeness_centrality = nx.closeness_centrality(G)
