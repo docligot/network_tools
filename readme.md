@@ -226,7 +226,8 @@ from networkx.algorithms.community import greedy_modularity_communities
 c = list(greedy_modularity_communities(G))
 pd.DataFrame(c)
 ```
-![Alt text](https://github.com/docligot/roadnet/blob/main/community.png)
+
+![Alt text](https://github.com/docligot/network_tools/blob/main/community.png)
 
 ## References
 
