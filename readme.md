@@ -217,6 +217,16 @@ plt.show()
 ```
 ![Alt text](https://github.com/docligot/network_tools/blob/main/shortest_directed_graph.png)
 
+### Community Detection
+
+Using modularity to detect communities of nodes.
+
+```
+from networkx.algorithms.community import greedy_modularity_communities
+c = list(greedy_modularity_communities(G))
+pd.DataFrame(c)
+```
+![Alt text](https://github.com/docligot/roadnet/blob/main/commnunity.png)
 
 ## References
 
