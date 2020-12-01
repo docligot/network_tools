@@ -286,8 +286,7 @@ Visualizing the community graphs
 
 ```
 pos = nx.spring_layout(G)
-
-plt.figure(figsize=(15, 10))
+plt.figure(figsize=(10, 10))
 nx.draw(G, pos, with_labels=True)
 # Draw external edges
 nx.draw_networkx(
@@ -303,6 +302,7 @@ nx.draw_networkx(
     node_color=node_color,
     edgelist=internal,
     edge_color=internal_color)
+plt.show()
 ```
 
 ![Alt text](https://github.com/docligot/network_tools/blob/main/community_detection_1.png)
