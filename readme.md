@@ -305,7 +305,7 @@ nx.draw_networkx(
     edge_color=internal_color)
 ```
 
-![Alt text](https://github.com/docligot/network_tools/blob/main/community_detection.png)
+![Alt text](https://github.com/docligot/network_tools/blob/main/community_detection_1.png)
 
 ## References
 
