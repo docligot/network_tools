@@ -285,20 +285,21 @@ internal_color = ['black' for e in internal]
 Visualizing the community graphs
 
 ```
-pos1 = nx.spring_layout(G)
+pos = nx.spring_layout(G)
 
-plt.rcParams.update({'figure.figsize': (15, 10)})
+plt.figure(figsize=(15, 10))
+nx.draw(G, pos, with_labels=True)
 # Draw external edges
 nx.draw_networkx(
     G,
-    pos=pos1,
+    pos,
     node_size=0,
     edgelist=external,
     edge_color="silver")
 # Draw nodes and internal edges
 nx.draw_networkx(
     G,
-    pos=pos1,
+    pos,
     node_color=node_color,
     edgelist=internal,
     edge_color=internal_color)
